@@ -14,18 +14,29 @@
 
 	{% include 'hdrAnnounceBar' %}
 
-  <header role="banner" class="hdrNavBar">
+    <header role="banner" class="hdrNavBar">
 
-	{% include 'hdrLogo' %}
+        {% include 'hdrHamBurger' %}
 
-	{% include 'hdrMainNav' %}
+	    {% include 'hdrLogo' %}
+
+	    {% include 'hdrMainNav' %}
     
-	{% include 'hdrCartActNav' %}
+	    {% include 'hdrCartActNav' %}
 
-  </header>
+    </header>
 
   
 </section>
+
+<script>
+   $(document).ready(function(){
+        var hamburgers = $(".hamburger");
+        hamburgers.on('click', function(){
+            this.classList.toggle("is-active");
+        });
+    });
+</script>
 
 {% if section.settings.logo != blank %}
   <style>
