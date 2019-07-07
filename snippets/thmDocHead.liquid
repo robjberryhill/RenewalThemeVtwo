@@ -42,6 +42,9 @@
 
 {%- endif -%}
 
+{{ 'stlGlobal.scss.css' | asset_url | stylesheet_tag }}
+{{ 'stlHeader.scss.css' | asset_url | stylesheet_tag }}
+
 {% include 'social-meta-tags' %}
 {% include 'css-variables' %}
 

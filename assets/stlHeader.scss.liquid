@@ -1,0 +1,41 @@
+@mixin prefix($property, $value) {
+    -webkit-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    #{$property}: #{$value};
+}
+.FlexWrapExtend {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.FlexColumn {
+    @include prefix(flex-wrap, nowrap );
+    @include prefix(flex-direction, column );
+}
+.FlexRow {
+    @include prefix(flex-wrap, nowrap );
+    @include prefix(flex-direction, row );
+}
+.FlexSpace {
+    @include prefix(align-items, center );
+    @include prefix(justify-content, space-between );
+    @include prefix(align-content, space-between );
+}
+
+.hdrMainContainer {
+    .hdrAnnounceBarCont {
+        .hdrAnnBarTxtLnk,
+        .hdrAnnBarTxt {
+            padding: 10px 0;
+            text-align: center;
+            display: block;
+        }
+    }
+    .hdrNavBar {
+        @extend .FlexWrapExtend;
+        @extend .FlexRow;
+        @include prefix(align-items, center );
+    }
+}

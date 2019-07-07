@@ -1,0 +1,15 @@
+{%- if section.settings.announcement_bar_enabled -%}
+
+    <div class="hdrAnnounceBarCont">
+
+        {%- if section.settings.announcement_bar_home_page_only == false or template.name == 'index' -%}
+            {%- if section.settings.announcement_bar_link != blank -%}<a href="{{ section.settings.announcement_bar_link }}" class="hdrAnnBarTxtLnk">{%- else -%}<p class="hdrAnnBarTxt">{%- endif -%}
+
+                {{ section.settings.announcement_bar_text | escape }}
+
+            {%- if section.settings.announcement_bar_link != blank -%}</a>{%- else -%}</p>{%- endif -%}
+        {%- endif -%}
+
+    </div>
+
+{%- endif -%}
